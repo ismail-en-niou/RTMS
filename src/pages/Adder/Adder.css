@@ -1,0 +1,204 @@
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-bg: #4CAF50;
+  --button-hover: #45a049;
+  --table-header-bg: #f2f2f2;
+  --table-border: #ddd;
+  --edit-button: #008CBA;
+  --delete-button: #f44336;
+  --link-color: #0066cc;
+}
+
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --input-bg: #333;
+  --input-border: #555;
+  --button-bg: #45a049;
+  --button-hover: #4CAF50;
+  --table-header-bg: #2c2c2c;
+  --table-border: #444;
+  --edit-button: #0099cc;
+  --delete-button: #ff5555;
+  --link-color: #66b3ff;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.adder-container {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 20px;
+}
+
+.adder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.adder-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.adder-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.adder-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+.input-length{
+  margin-left: 1.5rem;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+.adder-form button, .edit-btn, .delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.adder-form button {
+  background-color: var(--button-bg);
+  color: white;
+}
+
+.adder-form button:hover {
+  background-color: var(--button-hover);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.adder-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.adder-table th, .adder-table td {
+  border: 1px solid var(--table-border);
+  padding: 12px;
+  text-align: left;
+}
+
+.adder-table th {
+  background-color: var(--table-header-bg);
+}
+
+.adder-table a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.adder-table a:hover {
+  text-decoration: underline;
+}
+
+.btn-container {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn, .delete-btn {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: var(--edit-button);
+  color: white;
+}
+
+.delete-btn {
+  background-color: var(--delete-button);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .adder-container {
+    padding: 10px;
+  }
+
+  .adder-header h1 {
+    font-size: 20px;
+  }
+
+  .adder-form {
+    flex-direction: column;
+  }
+
+  .adder-form input, .adder-form button {
+    width: 100%;
+  }
+
+  .adder-table th, .adder-table td {
+    padding: 8px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .edit-btn, .delete-btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adder-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+
+  .theme-toggle {
+    margin-top: -15px;
+  }
+  .adder-form input{
+    width: 95%;
+  }
+  .adder-table {
+    font-size: 14px;
+  }
+
+  .adder-table th, .adder-table td {
+    padding: 6px;
+  }
+}

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --bg-color: #f0f4f8;
+  --content-bg-color: #ffffff;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --accent-color: #6c63ff;
+  --accent-hover-color: #5a52d5;
+  --input-bg-color: #f0f4f8;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --content-bg-color: #2c2c2c;
+  --text-color: #ffffff;
+  --secondary-text-color: #cccccc;
+  --accent-color: #8c85ff;
+  --accent-hover-color: #7a74e0;
+  --input-bg-color: #3a3a3a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.login-content {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  background-color: var(--content-bg-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  overflow: hidden;
+}
+
+.login-art {
+  flex: 1;
+  background-color: var(--accent-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.circle1 {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+  animation: float 8s infinite;
+}
+
+.circle2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -100px;
+  animation: float 10s infinite;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.login-form {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--secondary-text-color);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: var(--accent-hover-color);
+}
+
+.additional-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.additional-options a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.additional-options a:hover {
+  color: var(--accent-hover-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .login-content {
+    flex-direction: column;
+    width: 95%;
+    max-width: 400px;
+  }
+  
+  .login-art {
+    height: 150px;
+  }
+
+  .login-form {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  input, .login-button {
+    padding: 12px;
+  }
+
+  .additional-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional-options a {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-content {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .login-art {
+    height: 100px;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  input, .login-button {
+    padding: 10px;
+  }
+}
+
+.error-message {
+  color: #ff3333;
+  background-color: #ffeeee;
+  border: 1px solid #ff3333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
