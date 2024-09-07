@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Login.css'; // We'll create this file for styling
+import { json } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function Login() {
     setError('');
 
     try {
-      const response = await fetch('https://team-api.robixe.online/log-in', {
+      const response = await fetch('https://team-api.robixe.online/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,11 +47,12 @@ export default function Login() {
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('userRole', data.role);
         console.log('Token and role stored in local storage');
-        
+        localStorage.setItem('userInfo', JSON.stringify(data.info));
         // Redirect based on role
-        if (data.role === 'targeter') {
-          window.location.href = '/targeter';
-        } else if (data.role === 'adder') {
+        
+        if (data.role == 'call') {
+          window.location.href = '/target';
+        } else if (data.role == 'add') {
           window.location.href = '/adder';
         } else {
           window.location.href = '/';
@@ -82,6 +84,7 @@ export default function Login() {
           <div className="circle circle1"></div>
           <div className="circle circle2"></div>
           <div className="circle circle3"></div>
+          <img src="../../../public/Logo-2.svg" alt="Logo" className="login-logo" />
         </div>
         <form className="login-form" onSubmit={handleSubmit}>
           <h2>Welcome again</h2>
@@ -89,6 +92,7 @@ export default function Login() {
           
           <div className="form-group">
             <input
+            className='test'
               type="text"
               id="email"
               value={email}
@@ -99,6 +103,7 @@ export default function Login() {
           </div>
           <div className="form-group">
             <input
+            className='test'
               type="password"
               id="password"
               value={password}
@@ -114,7 +119,7 @@ export default function Login() {
           </div>
         </form>
       </div>
-      <button className="theme-toggle" onClick={toggleDarkMode}>
+      <button className="theme-toggle-td" onClick={toggleDarkMode}>
         {darkMode ? '☀️' : '🌙'}
       </button>
     </div>

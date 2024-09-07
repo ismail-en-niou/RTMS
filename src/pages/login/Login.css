@@ -35,7 +35,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -121,8 +121,8 @@ p {
   margin-bottom: 20px;
 }
 
-input {
-  width: 100%;
+.test{
+  width: 93%;
   padding: 15px;
   border: none;
   background-color: var(--input-bg-color);
@@ -170,7 +170,7 @@ input:focus {
   color: var(--accent-hover-color);
 }
 
-.theme-toggle {
+.theme-toggle-td {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -253,4 +253,18 @@ input:focus {
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.login-art {
+  position: relative;
+}
+
+.login-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-15%, -16%);
+  width: 600px; /* Adjust size as needed */
+  height: auto;
+  z-index: 10;
 }

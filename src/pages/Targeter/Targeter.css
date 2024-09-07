@@ -8,6 +8,13 @@
   --whatsapp-button: #25D366;
   --call-button: #0088cc;
   --link-color: #0066cc;
+  --nav-bg: #f0f0f0;
+  --stat-bg: #e0e0e0;
+  --primary-color: #4CAF50;
+  --danger-color: #f44336;
+  --warning-color: #FFA500;
+  --info-color: #2196F3;
+  --default-color: #9E9E9E;
 }
 
 .dark-mode {
@@ -20,6 +27,8 @@
   --whatsapp-button: #128C7E;
   --call-button: #0099cc;
   --link-color: #66b3ff;
+  --nav-bg: #333;
+  --stat-bg: #444;
 }
 
 body {
@@ -32,8 +41,8 @@ body {
 }
 
 .targeter-container {
-  max-width: 1200px;
-  height: 100vh;
+  max-width: 900px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 20px;
 }
@@ -42,7 +51,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 2rem 0 20px;
 }
 
 .targeter-header h1 {
@@ -53,8 +62,13 @@ body {
 .theme-toggle {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }
 
 .table-container {
@@ -69,8 +83,9 @@ body {
 
 .targeter-table th, .targeter-table td {
   border: 1px solid var(--table-border);
-  padding: 12px;
+  padding: 10px;
   text-align: left;
+  font-size: 14px;
 }
 
 .targeter-table th {
@@ -91,63 +106,182 @@ body {
   gap: 5px;
 }
 
-.whatsapp-btn, .call-btn {
+.whatsapp-btn, .call-btn, .status-btn2 {
   flex: 1;
-  padding: 8px;
+  padding: 10px 5px;
   font-size: 14px;
   border: none;
+  font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
   color: white;
 }
 
-.whatsapp-btn {
-  background-color: var(--whatsapp-button);
+.whatsapp-btn { background-color: var(--whatsapp-button); }
+.call-btn { background-color: var(--call-button); }
+
+.status-select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
 }
 
-.call-btn {
-  background-color: var(--call-button);
+.status-select.confirmed { background-color: var(--primary-color); }
+.status-select.no-response { background-color: var(--warning-color); }
+.status-select.reject { background-color: var(--danger-color); }
+
+.user-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  padding: 15px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-details span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.user-role {
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--stat-bg);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.stat-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+
+
+.logout-btn {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+.status-confirmed { background-color: var(--primary-color); }
+.status-no-response { background-color: var(--warning-color); }
+.status-reject { background-color: var(--danger-color); }
+.status-try-again { background-color: var(--info-color); }
+.status-default { background-color: var(--default-color); }
+
+.status-btn2 {
+  text-decoration: none;
+  width: 100%;
+}
+
+.status-btn:hover {
+  transform: translateY(-2px);
+}
+
+.status-btn:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
-  .targeter-container {
-    padding: 10px;
-  }
-
-  .targeter-header h1 {
-    font-size: 20px;
-  }
-
-  .targeter-table th, .targeter-table td {
-    padding: 8px;
-  }
-
-  .btn-container {
-    flex-direction: column;
-  }
-
-  .whatsapp-btn, .call-btn {
-    width: 100%;
-    margin-bottom: 5px;
-  }
+  .targeter-container { padding: 10px; }
+  .targeter-header h1 { font-size: 20px; }
+  .targeter-table th, .targeter-table td { padding: 8px; font-size: 12px; }
+  .status-select { padding: 3px; font-size: 12px; }
+  .btn-container { flex-direction: column; }
+  .whatsapp-btn, .call-btn { width: 100%; margin-bottom: 5px; }
+  .user-nav { flex-direction: column; gap: 15px; padding: 15px; }
+  .user-profile, .user-stats, .nav-actions { width: 100%; justify-content: center; }
+  .logout-btn { padding: 6px 12px; font-size: 12px; }
 }
 
 @media (max-width: 480px) {
-  .targeter-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .theme-toggle {
-    margin-top: 10px;
-  }
-
-  .targeter-table {
-    font-size: 14px;
-  }
-
-  .targeter-table th, .targeter-table td {
-    padding: 6px;
-  }
+  .targeter-header { flex-direction: column; align-items: flex-start; }
+  .theme-toggle { margin-top: 10px; }
+  .targeter-table { font-size: 14px; }
+  .targeter-table th, .targeter-table td { padding: 6px; font-size: 11px; }
+  .status-select { padding: 2px; font-size: 11px; }
+  .action-buttons { display: flex; flex-direction: column; justify-content: space-around; }
+  thead th { font-size: 10px; font-weight: 400; }
+  .call-btn, .whatsapp-btn, .status-btn2 { font-size: 10px; padding: 5px 0px; }
 }
