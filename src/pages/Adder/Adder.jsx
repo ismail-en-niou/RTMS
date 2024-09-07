@@ -293,7 +293,7 @@ export default function Adder() {
         <div className="user-profile">
           <div className="user-details">
             <h3>{'User : '}</h3>
-            <span>{userInfo.email || 'email@example.com'}</span>
+            <span>{userInfo.email || 'email@example.com'} </span> 
           </div>
         </div>
         <div className="user-stats">
