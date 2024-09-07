@@ -40,7 +40,7 @@ body {
 }
 
 .adder-container {
-  max-width: 900px;
+  max-width: 90%;
   margin: 0 auto;
   min-height: 100vh;
   padding: 20px;
@@ -165,7 +165,7 @@ body {
 
 .user-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--nav-bg);
   color: var(--text-color);
@@ -343,6 +343,14 @@ body {
   .logout-btn {
     padding: 6px 12px;
     font-size: 12px;
+  }
+  input.add-url , input.add-tel
+  {
+    width: 96%;
+  }
+  span.input-length
+  {
+    margin-left:-.08rem ;
   }
 }
 

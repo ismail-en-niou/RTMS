@@ -139,24 +139,6 @@ export default function Targeter() {
             <span>{userInfo.email || 'email@example.com'}</span>
           </div>
         </div>
-        <div className="user-stats">
-          <div className="stat-item">
-            <span className="stat-value">{stats.add}</span>
-            <span className="stat-label">Confirmed</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">{stats.delete}</span>
-            <span className="stat-label">No Response</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">{stats.edit}</span>
-            <span className="stat-label">Reject</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">{stats.tryAgain}</span>
-            <span className="stat-label">Try Again</span>
-          </div>
-        </div>
         <div className="nav-actions">
           <button className="logout-btn" onClick={handleLogout}>Log out</button>
           <button className="theme-toggle" onClick={toggleDarkMode}>{darkMode ? '🌙' : '☀️'}</button>
