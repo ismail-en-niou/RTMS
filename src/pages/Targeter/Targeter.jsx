@@ -3,7 +3,7 @@ import './Targeter.css';
 import { useNavigate } from 'react-router-dom';
 import { fetchOrders } from '../../utils/help';
 
-// Add this function before the Targeter component
+// Function to get the status color class
 function getStatusColor(status) {
   switch (status) {
     case 'confirmed':
@@ -19,7 +19,7 @@ function getStatusColor(status) {
   }
 }
 
-// Calculate status quantities
+// Function to calculate status quantities
 function calculateStatusQuantities() {
   const savedData = JSON.parse(localStorage.getItem('adderEntries') || '{}');
   const orders = savedData.orders || [];
@@ -43,23 +43,27 @@ function calculateStatusQuantities() {
 export default function Targeter() {
   const navigate = useNavigate();
   const [entries, setEntries] = useState([]);
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
   const [hasAccess, setHasAccess] = useState(true);
   const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
   const [stats, setStats] = useState({
     add: 0,
     delete: 0,
     edit: 0,
-    tryAgain: 0
+    tryAgain: 0,
   });
+  const [calls, setCalls] = useState(0);
 
   useEffect(() => {
+    const loadCalls = () => {
+      const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
+      setCalls(userInfo.call || 0);
+    };
+
     const loadEntries = async () => {
       try {
         const data = await fetchOrders();
-        localStorage.setItem("adderEntries", JSON.stringify(data));
+        localStorage.setItem('adderEntries', JSON.stringify(data));
         if (data && Array.isArray(data.orders)) {
           const formattedEntries = data.orders.map(order => ({
             id: order.id,
@@ -79,16 +83,15 @@ export default function Targeter() {
       }
     };
 
+    loadCalls();
     loadEntries();
     document.body.classList.toggle('dark-mode', darkMode);
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
 
-    // Check user role
     if (userInfo.role !== 'call') {
       setHasAccess(false);
     }
 
-    // Update stats
     const statusQuantities = calculateStatusQuantities();
     setStats({
       add: statusQuantities.confirmed,
@@ -137,6 +140,12 @@ export default function Targeter() {
           <div className="user-details">
             <h3>User: </h3>
             <span>{userInfo.email || 'email@example.com'}</span>
+          </div>
+        </div>
+        <div className="user-stats">
+          <div className="stat-item">
+            <span className="stat-value">{calls}</span>
+            <span className="stat-label">Calls  :</span>
           </div>
         </div>
         <div className="nav-actions">

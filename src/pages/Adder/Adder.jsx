@@ -39,6 +39,7 @@ export default function Adder() {
       const [hours, minutes, seconds] = time.split(':');
       const [day, month, year] = date.split('/');
       addDateTime = new Date(Date.UTC(year, month - 1, day, hours - 2, minutes, seconds));
+      console.log(addDateTime);
     } else {
       // If not in the expected format, try parsing it directly
       addDateTime = new Date(addTime);
@@ -308,15 +309,15 @@ export default function Adder() {
         <div className="user-stats">
           <div className="stat-item">
             <span className="stat-value">{stats.add}</span>
-            <span className="stat-label">Added</span>
+            <span className="stat-label">Added  :</span>
           </div>
           <div className="stat-item">
             <span className="stat-value">{stats.delete}</span>
-            <span className="stat-label">Deleted</span>
+            <span className="stat-label">Deleted  :</span>
           </div>
           <div className="stat-item">
             <span className="stat-value">{stats.edit}</span>
-            <span className="stat-label">Edited</span>
+            <span className="stat-label">Edited  :</span>
           </div>
         </div>
         <div className="nav-actions">

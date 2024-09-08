@@ -208,10 +208,11 @@ body {
 
 .stat-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
+  gap: .2rem;
   background-color: var(--stat-bg);
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
