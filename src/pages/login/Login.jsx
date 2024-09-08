@@ -84,7 +84,7 @@ export default function Login() {
           <div className="circle circle1"></div>
           <div className="circle circle2"></div>
           <div className="circle circle3"></div>
-          <img src="../../../public/Logo-2.svg" alt="Logo" className="login-logo" />
+          <img src="/Logo-2.svg" alt="Logo" className="login-logo" />
         </div>
         <form className="login-form" onSubmit={handleSubmit}>
           <h2>Welcome again</h2>
