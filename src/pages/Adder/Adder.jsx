@@ -319,7 +319,7 @@ export default function Adder() {
         </div>
         <div className="nav-actions">
           <button className="logout-btn" onClick={handleLogout}>
-            <img src="/logout.svg" alt="Logout" className="logout-icon" />
+            <img src="/logout1.svg" alt="Logout" className="logout-icon" />
           </button>
           <button className="theme-toggle" onClick={toggleDarkMode}>{darkMode ? '🌙' : '☀️'}</button>
         </div>
