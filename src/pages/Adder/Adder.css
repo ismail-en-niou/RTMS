@@ -374,6 +374,9 @@ body {
 }
 
 @media (max-width: 480px) {
+  .nav-logo{
+      margin-left: 1.7rem;
+  }
   .adder-header {
     flex-direction: column;
     align-items: flex-start;
