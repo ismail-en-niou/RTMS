@@ -196,6 +196,26 @@ body {
 
 
 .logout-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.logout-btn:hover .logout-icon {
+  transform: scale(1.1);
+}
+
+.logout-btn {
   background-color: var(--danger-color);
   color: white;
   border: none;
@@ -207,12 +227,6 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.logout-btn:hover {
-  background-color: #d32f2f;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .logout-btn:active {

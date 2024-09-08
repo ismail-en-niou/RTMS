@@ -281,20 +281,18 @@ body {
 }
 
 .logout-btn {
-  background-color: #ff1100;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   display: flex;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.logout-btn:hover {
-  background-color: #d32f2f;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.logout-btn:active {
-  transform: translateY(0);
-  box-shadow: none;
+.logout-icon {
+  width: 25px;
+  height: 25px;
 }
 
 .nav-actions {

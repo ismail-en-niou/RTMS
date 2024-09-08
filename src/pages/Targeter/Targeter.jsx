@@ -147,7 +147,9 @@ export default function Targeter() {
           </div>
         </div>
         <div className="nav-actions">
-          <button className="logout-btn" onClick={handleLogout}>Log out</button>
+          <button className="logout-btn" onClick={handleLogout}>
+            <img src="/logout.svg" alt="Logout" className="logout-icon" />
+          </button>
           <button className="theme-toggle" onClick={toggleDarkMode}>{darkMode ? '🌙' : '☀️'}</button>
         </div>
       </nav>
