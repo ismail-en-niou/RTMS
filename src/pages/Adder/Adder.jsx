@@ -301,7 +301,7 @@ export default function Adder() {
     <div className={`adder-container ${darkMode ? 'dark-mode' : ''}`}>
       <nav className="user-nav">
         <div className="logo-container">
-          <img src="/Logo-1.svg" alt="Logo" className="nav-logo" />
+          <img src="/Logo.svg" alt="Logo" className="nav-logo" />
         </div>
         <div className="user-stats">
           <div className="stat-item">
