@@ -212,7 +212,7 @@ body {
   align-items: center;
   gap: .2rem;
   position: relative;
-  left: 7rem;
+  left: 4rem;
   background-color: var(--stat-bg);
   padding: 4px 10px;
   border-radius: 5px;

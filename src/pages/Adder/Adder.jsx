@@ -305,16 +305,16 @@ export default function Adder() {
         </div>
         <div className="user-stats">
           <div className="stat-item">
-            <span className="stat-value">{stats.add}</span>
-            <span className="stat-label">Added  </span>
+            <span className="stat-label">{stats.add}</span>
+            <span className="stat-value">Added  </span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">{stats.delete}</span>
-            <span className="stat-label">Deleted  </span>
+            <span className="stat-label">{stats.delete}</span>
+            <span className="stat-value">Deleted  </span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">{stats.edit}</span>
-            <span className="stat-label">Edited </span>
+            <span className="stat-label">{stats.edit}</span>
+            <span className="stat-value">Edited </span>
           </div>
         </div>
         <div className="nav-actions">
