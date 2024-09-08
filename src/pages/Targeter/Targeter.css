@@ -18,7 +18,7 @@
 }
 
 .dark-mode {
-  --bg-color: #1a1a1a;
+  --bg-color: #0e1217;
   --text-color: #f0f0f0;
   --input-bg: #333;
   --input-border: #555;
@@ -27,7 +27,7 @@
   --whatsapp-button: #128C7E;
   --call-button: #0099cc;
   --link-color: #66b3ff;
-  --nav-bg: #333;
+  --nav-bg: #25282f;
   --stat-bg: #444;
 }
 
@@ -41,16 +41,16 @@ body {
 }
 
 .targeter-container {
-  max-width: 80%;
+  max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .targeter-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 1.5rem;
   margin: 2rem 0 20px;
 }
 
@@ -73,6 +73,8 @@ body {
 
 .table-container {
   overflow-x: auto;
+  padding: 1rem 1.5rem;
+  margin-top: -3rem;
 }
 
 .targeter-table {
@@ -134,16 +136,6 @@ body {
 .status-select.no-response { background-color: var(--warning-color); }
 .status-select.reject { background-color: var(--danger-color); }
 
-.user-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--nav-bg);
-  color: var(--text-color);
-  padding: 15px 20px;
-  transition: background-color 0.3s, color 0.3s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
 .user-profile {
   display: flex;
@@ -270,7 +262,6 @@ body {
   .status-select { padding: 3px; font-size: 12px; }
   .btn-container { flex-direction: column; }
   .whatsapp-btn, .call-btn { width: 100%; margin-bottom: 5px; }
-  .user-nav { flex-direction: column; gap: 15px; padding: 15px; }
   .user-profile, .user-stats, .nav-actions { width: 100%; justify-content: center; }
   .logout-btn { padding: 6px 12px; font-size: 12px; }
 }
@@ -283,5 +274,6 @@ body {
   .status-select { padding: 2px; font-size: 11px; }
   .action-buttons { display: flex; flex-direction: column; justify-content: space-around; }
   thead th { font-size: 10px; font-weight: 400; }
+  .user-profile .user-details{ font-size: 5px;}
   .call-btn, .whatsapp-btn, .status-btn2 { font-size: 10px; padding: 5px 0px; }
 }

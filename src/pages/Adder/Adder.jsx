@@ -317,6 +317,7 @@ export default function Adder() {
       </nav>
       <header className="adder-header">
         <h1>Adder Dashboard</h1>
+        
       </header>
       <form onSubmit={handleSubmit} className="adder-form">
         <div className="input-group">
