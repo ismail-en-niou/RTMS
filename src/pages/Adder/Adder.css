@@ -211,6 +211,8 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   gap: .2rem;
+  position: relative;
+  left: 7rem;
   background-color: var(--stat-bg);
   padding: 4px 10px;
   border-radius: 5px;
@@ -302,9 +304,21 @@ body {
   margin-left: 13rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .adder-container {
     padding: 10px;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: .2rem;
+    position: relative;
+    left: 0rem;
+    background-color: var(--stat-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
   }
   .nav-actions {
     display: flex;
