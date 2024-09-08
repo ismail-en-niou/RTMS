@@ -13,8 +13,8 @@
   --primary-color: #4CAF50;
   --danger-color: #f44336;
   --warning-color: #FFA500;
-  --info-color: #2196F3;
-  --default-color: #9E9E9E;
+  --info-color1: #1c93f5;
+  --default-color: #5e5e5e;
 }
 
 .dark-mode {
@@ -239,7 +239,7 @@ body {
 .status-confirmed { background-color: var(--primary-color); }
 .status-no-response { background-color: var(--warning-color); }
 .status-reject { background-color: var(--danger-color); }
-.status-try-again { background-color: var(--info-color); }
+.status-try-again { background-color: var(--info-color1); }
 .status-default { background-color: var(--default-color); }
 
 .status-btn2 {

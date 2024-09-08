@@ -40,7 +40,7 @@ export default function Status() {
           status: newStatus
         };
 
-        if (newStatus === 'try agin' && tryAgainTime && tryAgainDate) {
+        if (newStatus === 'try again' && tryAgainTime && tryAgainDate) {
           const formattedDateTime = `${tryAgainTime}:00 ${tryAgainDate}`;
           body.description = formattedDateTime;
         }
@@ -58,7 +58,7 @@ export default function Status() {
         }
 
         const updatedClient = { ...client, status: newStatus };
-        if (newStatus === 'try agin') {
+        if (newStatus === 'try again') {
           updatedClient.try_again_time = body.time;
         }
         setClient(updatedClient);
@@ -125,7 +125,7 @@ export default function Status() {
             Reject
           </button>
           <button 
-            className={`status-btn try-again ${client.status === 'try agin' ? 'active' : ''}`}
+            className={`status-btn try-again ${client.status === 'try again' ? 'active' : ''}`}
             onClick={() => setShowTryAgainInput(true)}
           >
             Try Again
@@ -147,7 +147,7 @@ export default function Status() {
             />
             <button onClick={() => {
               if (tryAgainTime && tryAgainDate) {
-                handleStatusChange('try agin');
+                handleStatusChange('try again');
               } else {
                 alert('Please set both date and time for Try Again');
               }
