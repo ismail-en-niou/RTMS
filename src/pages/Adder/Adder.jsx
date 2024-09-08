@@ -3,6 +3,15 @@ import './Adder.css';
 import { fetchOrders } from '../../utils/help';
 import { useNavigate } from 'react-router-dom';
 
+// Add this function at the top of the file, outside of the Adder component
+function Time() {
+  const nowInCasablanca = new Date().toLocaleString("en-GB", { timeZone: "Africa/Casablanca" });
+  const [datePart, timePart] = nowInCasablanca.split(", ");
+  const [day, month, year] = datePart.split("/").map(Number);
+  const [hours, minutes, seconds] = timePart.split(":").map(Number);
+  return new Date(Date.UTC(year, month - 1, day, hours - 2, minutes, seconds));
+}
+
 export default function Adder() {
   const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -21,7 +30,7 @@ export default function Adder() {
   const [editingEntry, setEditingEntry] = useState(null);
 
   const calculateTimeLeft = (addTime) => {
-    const now = new Date();
+    const now = Time(); // Use the Time() function instead of new Date()
     let addDateTime;
 
     // Check if addTime is in the format "HH:MM:SS DD/MM/YYYY"
@@ -29,7 +38,7 @@ export default function Adder() {
       const [time, date] = addTime.split(' ');
       const [hours, minutes, seconds] = time.split(':');
       const [day, month, year] = date.split('/');
-      addDateTime = new Date(year, month - 1, day, hours, minutes, seconds);
+      addDateTime = new Date(Date.UTC(year, month - 1, day, hours - 2, minutes, seconds));
     } else {
       // If not in the expected format, try parsing it directly
       addDateTime = new Date(addTime);
