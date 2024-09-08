@@ -298,26 +298,23 @@ export default function Adder() {
   }
   console.log(entries);
   return (
-    <div className="adder-container">
+    <div className={`adder-container ${darkMode ? 'dark-mode' : ''}`}>
       <nav className="user-nav">
-        <div className="user-profile">
-          <div className="user-details">
-            <h3>{'User : '}</h3>
-            <span>{userInfo.email || 'email@example.com'} </span> 
-          </div>
+        <div className="logo-container">
+          <img src="/Logo-1.svg" alt="Logo" className="nav-logo" />
         </div>
         <div className="user-stats">
           <div className="stat-item">
             <span className="stat-value">{stats.add}</span>
-            <span className="stat-label">Added  :</span>
+            <span className="stat-label">Added  </span>
           </div>
           <div className="stat-item">
             <span className="stat-value">{stats.delete}</span>
-            <span className="stat-label">Deleted  :</span>
+            <span className="stat-label">Deleted  </span>
           </div>
           <div className="stat-item">
             <span className="stat-value">{stats.edit}</span>
-            <span className="stat-label">Edited  :</span>
+            <span className="stat-label">Edited </span>
           </div>
         </div>
         <div className="nav-actions">

@@ -134,18 +134,16 @@ export default function Targeter() {
   }
 
   return (
-    <div className="targeter-container">
+    <div className={`targeter-container ${darkMode ? 'dark-mode' : ''}`}>
       <nav className="user-nav">
-        <div className="user-profile">
-          <div className="user-details">
-            <h3>User: </h3>
-            <span>{userInfo.email || 'email@example.com'}</span>
-          </div>
+        <div className="logo-container">
+          <img src="/Logo-1.svg" alt="Logo" className="nav-logo" />
         </div>
+      
         <div className="user-stats">
           <div className="stat-item">
             <span className="stat-label">{calls}</span>
-            <span className="stat-value">Calls  :</span>
+            <span className="stat-value">Calls</span>
           </div>
         </div>
         <div className="nav-actions">

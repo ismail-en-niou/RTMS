@@ -262,3 +262,13 @@ body {
   .user-profile .user-details{ font-size: 5px;}
   .call-btn, .whatsapp-btn, .status-btn2 { font-size: 10px; padding: 5px 0px; }
 }
+
+.nav-logo {
+  height: 40px;
+  margin-right: 15px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.dark-mode .nav-logo {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
