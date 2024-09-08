@@ -144,8 +144,8 @@ export default function Targeter() {
         </div>
         <div className="user-stats">
           <div className="stat-item">
-            <span className="stat-value">{calls}</span>
-            <span className="stat-label">Calls  :</span>
+            <span className="stat-label">{calls}</span>
+            <span className="stat-value">Calls  :</span>
           </div>
         </div>
         <div className="nav-actions">
