@@ -100,8 +100,8 @@ export default function Adder() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!/^(06|07|05)\d{8}$/.test(phoneNumber)) {
-      alert('Phone number must start with 06, 07, or 05 and be exactly 10 digits long.');
+    if (!/^(06|07|05|08)\d{8}$/.test(phoneNumber)) {
+      alert('Phone number must start with 06, 07, or 05 ,08 and be exactly 10 digits long.');
       return;
     }
 
